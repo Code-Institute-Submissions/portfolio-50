@@ -1,31 +1,86 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Portfolio 3
+![image](https://user-images.githubusercontent.com/119969411/214307542-1e8835b4-54f0-4230-a5df-237c79ebc1fb.png)
 
-Welcome SvenLoevgren,
+The *__Portfolio 3__* is an APP, based on a *Python* terminal (which runs in Code Institutes Mock Terminal on Heroku).
+The APP provides an automation of reporting logistics to the "*End User*"... Where data is filled into the Terminal, via an Input field - which in return - updates a *SpreadSheet*, for existing and future logistics for their market sales.
+This APP will improve the colaboration between business units in a *company* and at the same time "refactor" their sales market - for better controlled and optimized sales.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Existing Features
 
-## Reminders
+The __*"Kids Maths"*__ site has:
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+* A Calculator that generates random numbers.
+* There is also a *Summary Page* that displays results of all the answers, if they were correct or not and the result of the time spent on the Maths quiz.
+* There is a *reset function* on the *Summary Page* page also, so that the kids won't have to learn about the "crtl+shit+R" function, if they want to start over.
+* There are *"Mute function"*. also, but as the intention is to give positive feedback by sound, the sound is recommended to stay on - with a choice of switch it off.
+* A __*Link*__ to the Summary Page is provided in the game area, which gives the kids an opportunity to capture their effort and show it to their parents.
 
-## Creating the Heroku app
+## Summary page
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+![image](https://user-images.githubusercontent.com/119969411/212361245-031be8be-16dd-41ee-a371-a276db375543.png)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+This page contains a simple -easy to overview-table, of the *correct answers*, *wrong answers* and *total time* spent on the quiz. It focuses on the effort spent on the game and is as simple as it can get, to not complicate things.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## The Game page 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+![image](https://user-images.githubusercontent.com/119969411/212361394-4c19dba9-9387-4723-a47c-8e9110e9c92b.png)
 
-Connect your GitHub repository and deploy as normal.
+The game page has a simple overview of the functions provided to start the game and what the game gives in response. Press something and the game will give the user feedback about what the game is all about.
+It has minimal functions, to let the Kids focus on the game, rather than focusing on how to play it.
 
-## Constraints
+## The game Main functions
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/119969411/212361803-1a52316d-2b0a-4258-a49e-ed36e1ff7ab9.png">
 
------
-Happy coding!
+The *Calculator* section will allow the user to play/Learn *"Addition"*, *"Subtraction"*, *"Multiplication"* and *"Division"* by random numbers generated via clicking each specific button. An answering box will allow the user to give input of numbers as answers to the quiz...if other characters than numbers is entered in the answering box, the user will get feedback to enter a valid number... if the answer is wrong, then the user will get a visual feedback of that and the correct answer is given as feedback... if the answer to the question is correct, then the user will get positive feedback of that including a pling sound... each time the user reaches a value of 10 correct answers, then the user will get an applauded sound. The mute and sound-On buttons, gives the user a chance to turn of the game-sound and put it back on again. All answers - correct or wrong, are counted and showed on a scoreboard after pressing enter or clicking submit answer - so the Summary Page is just a copy of that, to view as a "diploma" and share it with kid’s parents.
+
+
+# Testing
+
+The site has been tested within the timeline and resources given, on different devices and different browser.
+Tools as jigsaw.w3.org, valitator.w3.org, webaccessability.com, caniuse.com, Lighthouse and JSHint, plus more has been used to ensure a stable site -before submitting this project.
+
+Features as “toggle button” for the sound on and off where taken away from this project, for future approvements, Since this Issue was never solved (To have only one mute button instead of two separate - one for *on* and one for *off*).
+
+
+## Validator Testing
+
+![image](https://user-images.githubusercontent.com/119969411/212362331-ac16492c-e854-455b-85d3-13eb8d2be634.png)
+
+![image](https://user-images.githubusercontent.com/119969411/212362501-f29d6a16-16cc-493a-822b-1338e82afd12.png)
+
+![image](https://user-images.githubusercontent.com/119969411/212362671-ed74c270-68e1-4202-b853-c09ec678d9fe.png)
+
+![image](https://user-images.githubusercontent.com/119969411/212362749-d37af5a7-9e84-41e0-aa30-0fe4edb2c7c8.png)
+
+
+### HTML
+No errors were returned when passing through the official W3C validator.
+### CSS
+No errors were found when passing through the official (Jigsaw) validator.
+### Java Script
+Warnings were present regarding the languish (not to use "LET" but "VAR" instead and not to use "CONST")... other than that, the *test* passed through without any issues.
+### Accessibility
+No errors were found when passing through the official (Chrome Lighthouse) validator.
+- but the feedback noted that the site buttons did not have any text. The buttons have the operators “+”,”–“, “x”, and “/” signs and respective explanation below - *so this feedback was ignored*... but to ensure that the screen-reader can coupe with the game buttons - an "ALT" attribute with text was added to these buttons (so that the screen-reader can speak out each buttons functionality.
+
+# Deployment
+
+The site was deployed via GitHub pages:
+
+The __live__ link can be found here - https://svenloevgren.github.io/portfolio-project-2/
+
+(Link for Code: https://github.com/SvenLoevgren/portfolio-project-2 ).
+
+# Credits
+
+Code Institute education in general coding of HTML, CSS and Java Script - including advice of where to find free content on the web to style the site, plus tools to use to validate the site.
+Extra credit to my mentor given by Code Institute, for making it possible to understand the logic of coding and troubleshooting this site.
+
+## Content
+The Site and layout was taken from Code institute "Love Maths" project... and adjusted to fit the "Kids Maths" - adding features as sound, text, Summary etc.
+Instructions on how to implement the "Division" button was taken from the Code Institute education material.
+
+## Media
+Images from *"Pixabay"*, icons from *"Font awesome"*, Fonts from *"Google fonts"*, Logos from *"Code Institute program"*.
+Both the logos of title and heading was taken from the Code institute education material (of the "Love Maths" project).
