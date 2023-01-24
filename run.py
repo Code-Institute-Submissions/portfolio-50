@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
+# using datetime module
+import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -63,6 +64,11 @@ def update_worksheet(data, worksheet):
     """
     print(f"Updating {worksheet} worksheet...\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
+    # add timestamp to new row in stock worksheet
+    if worksheet == "stock":
+        dt = f'{datetime.datetime.now():%Y-%m-%d %H:%M:%S%z}'
+        data.append(dt)
+    # Adds new row to the current worksheet
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
 
@@ -76,7 +82,8 @@ def calculate_surplus_data(sales_row):
     """
     print("Calculating surplus data...\n")
     stock = SHEET.worksheet("stock").get_all_values()
-    stock_row = stock[-1]
+    # Calculation only applied to the first 6 columns data in the sheet
+    stock_row = stock[-1][:6]
     
     surplus_data = []
     for stock, sales in zip(stock_row, sales_row):
