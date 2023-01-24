@@ -17,10 +17,8 @@ SHEET = GSPREAD_CLIENT.open('Portfolio3')
 
 def get_sales_data():
     """
-    Get sales figures input from the user.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be a string of 6 numbers separated
-    by commas. The loop will repeatedly request data, until it is valid.
+    Get input from user and validate data.
+    Update string input and separate data with comma for the CSV file.
     """
     while True:
         print("Please enter sales data from the last market.")
@@ -40,9 +38,8 @@ def get_sales_data():
 
 def validate_data(values):
     """
-    Inside the try, converts all string values into integers.
-    Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
+    Throws error to the user,
+    if the input value is not 6 numbers needed for the CSV file.
     """
     try:
         [int(value) for value in values]
@@ -59,8 +56,8 @@ def validate_data(values):
 
 def update_worksheet(data, worksheet):
     """
-    Receives a list of integers to be inserted into a worksheet
-    Update the relevant worksheet with the data provided
+    Updates the worksheet with new validated data,
+    and adds a timestamp to the stock worksheet.
     """
     print(f"Updating {worksheet} worksheet...\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
@@ -110,7 +107,8 @@ def get_last_5_entries_sales():
 
 def calculate_stock_data(data):
     """
-    Calculate the average stock for each item type, adding 10%
+    Calculate the average stock for each item type,
+    from the five last rows and adding 10%.
     """
     print("Calculating stock data...\n")
     new_stock_data = []
@@ -126,7 +124,9 @@ def calculate_stock_data(data):
 
 def main():
     """
-    Run all program functions.
+    Run all program functions,
+    EXCEPT the final function,
+    that informs the user to add recommended stock for the next market.
     """
     data = get_sales_data()
     sales_data = [int(num) for num in data]
@@ -147,7 +147,8 @@ stock_data = main()
 
 def get_stock_values(data):
     """
-    Print out the calculated stock numbers for each sandwich type.
+    Prints out the calculated stock value to the user,
+    including CSV headers - for the next sales market.
     """
     headings = SHEET.worksheet("stock").get_all_values()[0][:6]
 
