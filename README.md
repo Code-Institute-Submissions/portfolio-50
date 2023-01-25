@@ -1,76 +1,91 @@
 # Portfolio 3
 ![image](https://user-images.githubusercontent.com/119969411/214307542-1e8835b4-54f0-4230-a5df-237c79ebc1fb.png)
 
-The *__Portfolio 3__* is an APP, based on a *Python* terminal (which runs in Code Institutes Mock Terminal on Heroku).
+The __*Portfolio 3*__ is an APP, based on a *Python* terminal (which runs in Code Institutes Mock Terminal on Heroku).
 The APP provides an automation of reporting logistics to the "*End User*"... Where data is filled into the Terminal, via an Input field - which in return - updates a *SpreadSheet*, for existing and future logistics for their market sales.
-This APP will improve the colaboration between business units in a *company* and at the same time "refactor" their sales market - for better controlled and optimized sales.
+This APP will improve the colaboration between business units in a *company* and at the same time "__refactor__" their sales market - for better controlled and optimized sales.
 
-# Existing Features
+# Features
 
-The __*"Kids Maths"*__ site has:
+The __*"Portfolio 3"*__ APP has:
 
-* A Calculator that generates random numbers.
-* There is also a *Summary Page* that displays results of all the answers, if they were correct or not and the result of the time spent on the Maths quiz.
-* There is a *reset function* on the *Summary Page* page also, so that the kids won't have to learn about the "crtl+shit+R" function, if they want to start over.
-* There are *"Mute function"*. also, but as the intention is to give positive feedback by sound, the sound is recommended to stay on - with a choice of switch it off.
-* A __*Link*__ to the Summary Page is provided in the game area, which gives the kids an opportunity to capture their effort and show it to their parents.
+* A Python Terminal and a *Google Spread sheet (gspread)* controlled via an API, from the Terminal.
+* The terminal works as a "Macro" for this *gspred* - where all the Calculation relies on the Python Modeling.
+* There is a *timestamp* added to the *gspread* for a new stock calculation - so that the user can easy track their Market, and "if wanted" store old-data.
 
-## Summary page
+## Existing Features
 
-![image](https://user-images.githubusercontent.com/119969411/212361245-031be8be-16dd-41ee-a371-a276db375543.png)
+![image](https://user-images.githubusercontent.com/119969411/214456782-0fd0fe73-b7cd-4758-94da-408c6a3f84db.png)
 
-This page contains a simple -easy to overview-table, of the *correct answers*, *wrong answers* and *total time* spent on the quiz. It focuses on the effort spent on the game and is as simple as it can get, to not complicate things.
+- There is an *Input* field in the Terminal, which is open for entry when the APP runs.
+- There is also validation of all data that has been entrered within the *Input* field.
+  * Validation of gspread Range
+  * Validation gspread Len
+  * Validation of Int numbers
+  * Validation of comma separation (for gspread updates)
 
-## The Game page 
+## Future Features
 
-![image](https://user-images.githubusercontent.com/119969411/212361394-4c19dba9-9387-4723-a47c-8e9110e9c92b.png)
+![image](https://user-images.githubusercontent.com/119969411/214460108-612e7ebc-aaca-4d7a-8eeb-ebfd3da8c904.png)
 
-The game page has a simple overview of the functions provided to start the game and what the game gives in response. Press something and the game will give the user feedback about what the game is all about.
-It has minimal functions, to let the Kids focus on the game, rather than focusing on how to play it.
+The APP will be able to:
+* Add timestamps to all worksheets within the gspread.
+* The Terminal will have a "clear" Terminal option after each run.
+* The Error codes thrown at the end-users, will be overviewed and adjusted accordingly
+* The *gspread* will be cleared and stored from old-data, to pass this data to a separate worksheet-history sheet.
+  - This can be done with a scheduled job.
 
-## The game Main functions
+# Getting Set-up
 
-<img width="302" alt="image" src="https://user-images.githubusercontent.com/119969411/212361803-1a52316d-2b0a-4258-a49e-ed36e1ff7ab9.png">
+<img width="362" alt="image" src="https://user-images.githubusercontent.com/119969411/214460750-5b622955-53e5-487d-967f-e297300ed92e.png">
 
-The *Calculator* section will allow the user to play/Learn *"Addition"*, *"Subtraction"*, *"Multiplication"* and *"Division"* by random numbers generated via clicking each specific button. An answering box will allow the user to give input of numbers as answers to the quiz...if other characters than numbers is entered in the answering box, the user will get feedback to enter a valid number... if the answer is wrong, then the user will get a visual feedback of that and the correct answer is given as feedback... if the answer to the question is correct, then the user will get positive feedback of that including a pling sound... each time the user reaches a value of 10 correct answers, then the user will get an applauded sound. The mute and sound-On buttons, gives the user a chance to turn of the game-sound and put it back on again. All answers - correct or wrong, are counted and showed on a scoreboard after pressing enter or clicking submit answer - so the Summary Page is just a copy of that, to view as a "diploma" and share it with kid’s parents.
-
+There needs to be a timestamp and a gspread module for the APP to run and execute commands... there for you need to add these Modules in Gitpod:
+* TFor these three imports - to the .py file - as shown In the image above:
+   1. Two imports for the Gspread and its API
+      - These two Imports needs an installation via the Gitpod Terminal (Terminal command: *pip3 install gspread google-auth* )
+   2. One import is for the timestamp module
+      - The Import for the Timestamp will work with no installation, though it is a part of Python Modelling.
 
 # Testing
 
-The site has been tested within the timeline and resources given, on different devices and different browser.
-Tools as jigsaw.w3.org, valitator.w3.org, webaccessability.com, caniuse.com, Lighthouse and JSHint, plus more has been used to ensure a stable site -before submitting this project.
-
-Features as “toggle button” for the sound on and off where taken away from this project, for future approvements, Since this Issue was never solved (To have only one mute button instead of two separate - one for *on* and one for *off*).
-
+The site has been tested within the timeline and resources given, on different devices and different browsers.
+PEP8 check has been done, before deployment.
 
 ## Validator Testing
 
-![image](https://user-images.githubusercontent.com/119969411/212362331-ac16492c-e854-455b-85d3-13eb8d2be634.png)
+![image](https://user-images.githubusercontent.com/119969411/214463288-99eccfef-a7ad-41b6-981e-947f119684b7.png)
 
-![image](https://user-images.githubusercontent.com/119969411/212362501-f29d6a16-16cc-493a-822b-1338e82afd12.png)
+### PEP8
+No errors were returned when passing through the Code Institutes PEP8 validator.
 
-![image](https://user-images.githubusercontent.com/119969411/212362671-ed74c270-68e1-4202-b853-c09ec678d9fe.png)
-
-![image](https://user-images.githubusercontent.com/119969411/212362749-d37af5a7-9e84-41e0-aa30-0fe4edb2c7c8.png)
+## Functional Testing
 
 
-### HTML
-No errors were returned when passing through the official W3C validator.
-### CSS
-No errors were found when passing through the official (Jigsaw) validator.
-### Java Script
-Warnings were present regarding the languish (not to use "LET" but "VAR" instead and not to use "CONST")... other than that, the *test* passed through without any issues.
-### Accessibility
-No errors were found when passing through the official (Chrome Lighthouse) validator.
-- but the feedback noted that the site buttons did not have any text. The buttons have the operators “+”,”–“, “x”, and “/” signs and respective explanation below - *so this feedback was ignored*... but to ensure that the screen-reader can coupe with the game buttons - an "ALT" attribute with text was added to these buttons (so that the screen-reader can speak out each buttons functionality.
+### Bugs -Solved
+![image](https://user-images.githubusercontent.com/119969411/214465371-4048d119-acb6-48cc-9de2-58a6685f7b5d.png)
+![image](https://user-images.githubusercontent.com/119969411/214465421-517c75f7-65b8-4ae2-8c34-1c3bbca3494c.png)
+
+There was a "*Typo*" found regarding the "next line function" wich was changed from "/n" to "\n".
+  - This peace of code could maybe have been removed, but the overal view looked leaner to thave the input field below the input statement,
+  - And this change also provided for some extra characters to be added to the input field -for future features (though the line break avoids width spacing).
+
+### Bugs -Remaining
+![image](https://user-images.githubusercontent.com/119969411/214465654-c1fc24db-ae1f-45f2-b0d4-82d54c18e0d3.png)
+![image](https://user-images.githubusercontent.com/119969411/214465728-b7a382c0-d335-4ae5-8a66-cf248d31050d.png)
+
+The errors thrown to the end-user when typing other things into the Terminal - except comma separated numbers - are confusing (for a non-programmer).
+- These Bugs will be remaining though the message still ends upp with __*invalid data- and please try again!*__ and after that error is thrown, a clare text of what is expected for the user is stated within the Terminal (see IMAGES).
+  * Note that the "__*Less than 6 numbers*__" errors are all okay (Readable for end-users) - so there only needs to be a change in the "try" statement for all other validation errors in a future release.
+    - An introduction course -together with a 1st and a 2nd line support- would easy handle this "bug"... And for an end-user to type in "*bananas*" in a terminal,    that clarely states how and what numbers to type in there, after an *end user introduction*... Well that is a far more serious Issue than the actual bug itself!
+    1. BUG REMAINS, for future release!
 
 # Deployment
 
 The site was deployed via GitHub pages:
 
-The __live__ link can be found here - https://svenloevgren.github.io/portfolio-project-2/
+The __live__ link can be found here - https://portfolio3.herokuapp.com/
 
-(Link for Code: https://github.com/SvenLoevgren/portfolio-project-2 ).
+(Link for Code: https://github.com/SvenLoevgren/portfolio-3 ).
 
 # Credits
 
